@@ -1,0 +1,33 @@
+import { CourseActions } from './course.actions';
+import { Component, OnInit } from '@angular/core';
+import { CourseService } from './course.service';
+import { Course } from './course';
+import { FilterTextComponent} from '../blocks/filter-text';
+import { IAppState } from '../store';
+import { NgRedux, select } from 'ng2-redux';
+import { Observable } from 'rxjs/Observable';
+
+@Component({
+  selector: 'app-course-list',
+  templateUrl: './course-list.component.html',
+  styleUrls: ['./course-list.component.css']
+})
+export class CourseListComponent implements OnInit {
+  @select('filteredCourses') filteredCourses$: Observable<Course>;
+
+  constructor(
+    private ngRedux: NgRedux<IAppState>,
+    private coursesActions: CourseActions
+    ) {
+  }
+
+  filterChanged(searchText: string) {
+    console.log('user searched: ', searchText);
+    this.coursesActions.filterCourses(searchText);
+  }
+
+  ngOnInit() {
+    this.coursesActions.getCourses();
+    componentHandler.upgradeDom();
+  }
+}
