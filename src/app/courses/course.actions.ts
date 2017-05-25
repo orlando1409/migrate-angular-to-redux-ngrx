@@ -48,5 +48,9 @@ export class CourseActions {
     randomNumber4(min, max) {
         return Math.floor(Math.random() * (max - min + 1)) + min
     };
+
+    randomNumber5(min, max) {
+        return Math.floor(Math.random() * (max - min + 1)) + min
+    };
     
 };
