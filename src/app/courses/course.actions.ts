@@ -33,12 +33,15 @@ export class CourseActions {
         })
     }
 
-    randomNumber = (min, max) => (
-        Math.floor(Math.random() * (max - min + 1)) + min
-    );
+    randomNumber(min, max) {
+        return Math.floor(Math.random() * (max - min + 1)) + min
+    };
 
-    randomNumber2 = (min, max) => (
-        Math.floor(Math.random() * (max - min + 1)) + min
-    );
+    randomNumber2(min, max) {
+        return Math.floor(Math.random() * (max - min + 1)) + min
+    };
 
+    randomNumber3(min, max) {
+        return Math.floor(Math.random() * (max - min + 1)) + min
+    };
 };
