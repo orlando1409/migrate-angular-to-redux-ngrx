@@ -51,4 +51,11 @@ export class CourseActions {
             .map(word => word.charAt(0).toUpperCase())
             .Join('');
     }
+
+    getURLSlug(words){
+        words
+        .replace(/\s+/, '-')
+        .toLowerCase()
+    ;
+
 };
