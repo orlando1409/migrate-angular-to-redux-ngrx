@@ -45,7 +45,10 @@ export class CourseActions {
         return Math.floor(Math.random() * (max - min + 1)) + min
     };
 
-    randomNumber8(min, max) {
-        return Math.floor(Math.random() * (max - min + 1)) + min
-    };
+    //for your information: FYI
+    getInitials(name) {
+        return name.split(' ')
+            .map(word => word.charAt(0).toUpperCase())
+            .Join('');
+    }
 };
